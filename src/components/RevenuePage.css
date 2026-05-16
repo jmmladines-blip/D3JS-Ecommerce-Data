@@ -1,0 +1,292 @@
+/* Page wrapper and container */
+.rev-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  background: #fafafa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.rev-container {
+  width: 980px;
+  max-width: 96%;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(20, 30, 40, 0.06);
+  padding: 20px 26px;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Dashboard header */
+.rev-dashboard-header {
+  text-align: center;
+  margin: 6px 0 8px 0;
+  width: 100%;
+  max-width: 980px;
+}
+
+.rev-dashboard-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1b4f72;
+  letter-spacing: -0.2px;
+}
+
+.rev-dashboard-desc {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.35;
+}
+
+/* Selected Start / End date box */
+.rev-selected-dates {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(27,79,114,0.08);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(20,30,40,0.03);
+  margin: 12px 0;
+  max-width: 980px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.rev-date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.rev-date-label {
+  font-size: 11px;
+  color: #666;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.rev-date-value {
+  font-size: 14px;
+  color: #1b4f72;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.rev-date-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(27,79,114,0.06);
+  border-radius: 1px;
+}
+
+/* Filter area */
+.rev-filter {
+  margin: 14px 0 18px 0;
+}
+
+.rev-slider-label {
+  display: block;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* react-range track wrapper fallback styling (visual) */
+.rev-range-track {
+  height: 6px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Month markers under slider */
+.rev-slider-markers {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  margin-top: 8px;
+  user-select: none;
+}
+
+/* Marker label */
+.rev-slider-marker {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #444;
+  white-space: nowrap;
+  top: 0;
+  padding: 0 4px;
+}
+
+/* Small tick when label suppressed */
+.rev-slider-tick {
+  width: 2px;
+  height: 8px;
+  background: #bbb;
+  border-radius: 1px;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+/* Clear button */
+.rev-clear-btn {
+  background: #fff;
+  color: #333;
+  border: 1px solid #d0d0d0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+
+.rev-clear-btn:hover {
+  background: #f7f7f7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* KPI card */
+.rev-card {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1px solid rgba(27,79,114,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.rev-card-label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.rev-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b4f72;
+}
+
+.rev-card-footer {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Horizontal bar chart styles (D3 classes) */
+.rev-bar {
+  fill: #2e86c1;
+  rx: 4;
+}
+
+.rev-axis-label {
+  font-size: 12px;
+  fill: #333;
+}
+
+.rev-value-label {
+  font-size: 12px;
+  fill: #222;
+}
+
+/* Stacked chart labels */
+.stack-label {
+  font-size: 11px;
+  fill: #fff;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* Legend button styles (SVG legend) */
+.legend-button-box {
+  stroke: rgba(0,0,0,0.06);
+}
+
+.legend-button {
+  font-size: 13px;
+  fill: #222;
+}
+
+/* Summary table */
+.rev-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.rev-summary-table th,
+.rev-summary-table td {
+  border: 1px solid #eee;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.rev-summary-table thead th {
+  background: #fafafa;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 760px) {
+  .rev-container {
+    padding: 14px;
+  }
+
+  .rev-dashboard-title {
+    font-size: 22px;
+  }
+
+  .rev-card-value {
+    font-size: 18px;
+  }
+
+  .rev-summary-table th,
+  .rev-summary-table td {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .rev-slider-marker {
+    font-size: 10px;
+  }
+
+  .rev-selected-dates {
+    width: calc(100% - 28px);
+    padding: 8px;
+  }
+
+  .rev-date-item {
+    min-width: 90px;
+  }
+
+  .rev-date-value {
+    font-size: 13px;
+  }
+}
+
+/* Accessibility helper */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

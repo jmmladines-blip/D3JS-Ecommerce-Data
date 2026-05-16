@@ -1,0 +1,16 @@
+/* ProductDashboard.css */
+.pd-page {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.pd-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.pd-desc {
+  color: #666;
+  margin-top: 8px;
+  font-size: 18px;
+}
