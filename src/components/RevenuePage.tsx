@@ -25,7 +25,7 @@ export default function RevenuePage() {
 
   // Load CSV and build month list
   useEffect(() => {
-    csv("/src/data/ecommerce.csv").then((rows: any[]) => {
+    csv("/d3js-react-dashboard/ecommerce.csv").then((rows: any[]) => {
       setData(rows || []);
       const months = [...new Set((rows || []).map((d) => d.Date_YYYY_MM))].sort();
       setAllMonths(months);
@@ -366,48 +366,58 @@ export default function RevenuePage() {
                   if (v0 <= v1) setMonthRange([v0, v1]);
                   else setMonthRange([v1, v0]);
                 }}
-                renderTrack={({ props, children }) => (
-                  <div
-                    {...props}
-                    style={{
-                      height: "6px",
-                      width: "100%",
-                      background: "#ddd",
-                      borderRadius: "3px",
-                      marginTop: "20px",
-                      position: "relative"
-                    }}
-                  >
+
+                renderTrack={({ props, children }) => {
+                  const { key, ...rest } = props;   // remove key from spread
+                  return (
                     <div
+                      key={key}
+                      {...rest}
                       style={{
-                        position: "absolute",
                         height: "6px",
-                        background: "#2E86C1",
+                        width: "100%",
+                        background: "#ddd",
                         borderRadius: "3px",
-                        left: `${(monthRange[0] / Math.max(1, allMonths.length - 1)) * 100}%`,
-                        width: `${((monthRange[1] - monthRange[0]) / Math.max(1, allMonths.length - 1)) * 100}%`
+                        marginTop: "20px",
+                        position: "relative"
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: "absolute",
+                          height: "6px",
+                          background: "#2E86C1",
+                          borderRadius: "3px",
+                          left: `${(monthRange[0] / Math.max(1, allMonths.length - 1)) * 100}%`,
+                          width: `${((monthRange[1] - monthRange[0]) / Math.max(1, allMonths.length - 1)) * 100}%`
+                        }}
+                      />
+                      {children}
+                    </div>
+                  );
+                }}
+
+                renderThumb={({ props }) => {
+                  const { key, ...rest } = props;   // extract key
+                  return (
+                    <div
+                      key={key}
+                      {...rest}
+                      style={{
+                        ...rest.style,
+                        height: "20px",
+                        width: "20px",
+                        backgroundColor: "#1B4F72",
+                        borderRadius: "50%",
+                        border: "2px solid white",
+                        boxShadow: "0 0 4px rgba(0,0,0,0.4)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
                       }}
                     />
-                    {children}
-                  </div>
-                )}
-                renderThumb={({ props }) => (
-                  <div
-                    {...props}
-                    style={{
-                      ...props.style,
-                      height: "20px",
-                      width: "20px",
-                      backgroundColor: "#1B4F72",
-                      borderRadius: "50%",
-                      border: "2px solid white",
-                      boxShadow: "0 0 4px rgba(0,0,0,0.4)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center"
-                    }}
-                  />
-                )}
+                  );
+                }}
               />
 
               {/* Month markers */}

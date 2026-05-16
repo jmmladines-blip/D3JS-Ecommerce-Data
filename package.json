@@ -1,14 +1,13 @@
 {
-  "homepage": "https"
   "name": "d3js-react-dashboard",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -21,6 +20,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/d3": "^7.4.3",
+    "@types/d3-fetch": "^3.0.7",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
